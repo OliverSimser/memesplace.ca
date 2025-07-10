@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meme's Place</title>
+  <!-- All the stuff that's hidden from website -->
+ <style>
+   body {
+     margin: 0; /* Remove default browser margin (gets rid of white edge) */
+   }
+   .top-bar { /* Is a CSS class */
+     background-color: #66d9e8;
+     color: black;
+     padding: 21px 0;
+     text-align: center;
+     font-size: 4.75em;
+     font-family: sans-serif;
+     font-weight: 525;
+   }
+   .mid-bar1 {
+     background-color: #eaead4;
+     padding: 40px 0;
+     text-align: center;
+   }
+   .mid-bar2 {
+      display: flex;
+     height: 900px;
+     width: 100%;
+   }
+   .left-half {
+     flex: 1;
+     background-color: #e7d6ff;
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     font-size: 2em;
+   }
+   .right-half {
+     flex: 1;
+     background-color: #fff8b3;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 2em;
+   }
+    .left-halftext,
+    .right-halftext { /* Side by side here (flex), they are same so just use ","*/
+        flex: 1;
+        background-color: #fcf6e4;
+        display: flex;
+        flex-direction: column; /* Makes it so that the info is displayed below "Address" and not side by side */
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+   }
+   .about-content {
+     text-align: center;
+     max-width: 520px;
+   }
+   .about-content h2 {
+     font-size: 1.6em;
+     font-family: sans-serif;
+     font-weight: bold;
+     margin-bottom: 20px;
+   }
+   .about-content p {
+     font-size: 1.0em;
+     text-align: left;
+     margin-bottom: 15px;
+     line-height: 1.5;
+   }
+   .about-content small {
+     font-size: 0.6em;
+     text-align: left;
+     display: block; /* Makes <small> behave like a paragraph, so text-align works*/
+     color: #333;
+     font-family: "Comic Sans MS";
+   }
+   .review-content {
+     text-align: center;
+     max-width: 1300px;
+     margin: 0 auto; /* centers the whole block on the page */
+   }
+   .review-content p {
+     font-size: 0.35em;
+     text-align: left;
+     padding: 30px 0;
+     line-height: 1.5;
+   }
+   .review-text {
+     font-size: 0.3em;
+     text-align: center;
+     padding: 30px 0;
+     line-height: 1.5;
+     font-weight: 400;
+   }
+   .mid-bar3 {
+     background-color: #eed153;
+     text-align: center;
+     height: 1150px;
+     width: 100%;
+     text-align: center;
+     font-size: 3.5em;
+     font-family: sans-serif;
+     font-weight: 525;
+     padding: 19px 0;
+   }
+   .mid-bar4 {
+     background-color: rgba(157, 231, 97, 0.89);
+     text-align: center;
+     height: 530px;
+     width: 100%;
+     text-align: center;
+     font-size: 4em;
+     font-family: sans-serif;
+     font-weight: 600;
+     padding: 19px 0;
+   }
+   .mid-bar5 {
+     background-color: rgb(252, 246, 228);
+     text-align: center;
+     height: 700px;
+     width: 100%;
+     font-family: sans-serif;
+     padding: 25px 0;
+   }
+   .contact-title { /* We want the title to just be in the middle, basic */
+     font-size: 4em;
+     font-weight: bold;
+     margin-bottom: 30px;
+   }
+   .contact-row {
+      display: flex;            /* This is where the side-by-side happens with Address and Contact*/
+      margin-top: 30px;         /* Adds spacing below the "Contact Us" title */
+      font-weight: bold;
+   }
+   .small-text {
+      font-size: 0.6em;
+      line-height: 1.4;
+      text-align: center;
+      font-weight: 400;
+   }
+   .photo-row {
+     display: flex;
+     justify-content: center;
+     gap: 110px;
+   }
+   .photo-row img { /* Must add img here if you want this class to be for images */
+     height: 600px;
+     width: auto; /* makes it so the image will automatically go to scale and be the height you want */
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* optional for style */
+   }
+   .slideshow-container {
+     position: relative;
+     max-width: 600px;
+     height: 450px;  /* Fixed height here so it doesnt change height as images change */
+     margin: 0 auto;
+     overflow: hidden;
+     background-color: #eaead4;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .slide {
+     max-height: 100%; /* next 3 So images wont overflow */
+     max-width: 100%;
+     object-fit: contain;
+     display: none;
+     border-radius: 10px;
+   }
+   .photo-normal img {
+     height: 315px;
+     width: auto;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   }
+   .map-container {
+      max-width: 1050px;
+      margin: 40px auto;      /* center on page with spacing above/below */
+      padding: 0 20px;         /* optional horizontal padding */
+   }
+ </style>
+</head>
+
+<body>
+  <!-- Div creates a box; class applies the CSS style above -->
+  <div class="top-bar">
+    Meme's Place
+  </div>
+  <div class="mid-bar1">
+    <div class="slideshow-container">
+      <img class="slide" src="photo2.jpg" alt="Photo 1">
+      <img class="slide" src="photo3.jpg" alt="Photo 2">
+      <img class="slide" src="photo1.JPG" alt="Photo 3">
+      <img class="slide" src="Bodhi.jpg" alt="Photo 4">
+      <img class="slide" src="photo4.jpg" alt="Photo 5">
+      <img class="slide" src="photo5.jpg" alt="Photo 6">
+    </div>
+  </div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlides() {
+    slides.forEach(slide => slide.style.display = "none"); //Hides all slides
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex =1;
+    }
+    // Show current slide (slideIndex - 1 because arrays start at 0)
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2600);
+  }
+  showSlides();
+</script>
+
+  <div class="mid-bar2">
+    <div class="left-half">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+          We are an Infants and Toddlers home daycare.
+
+          Growing up independent and unique, fostering self respect, creativity, curiosity, and life appreciation in a personal and nurturing environment.
+        </p>
+        <small>  - Elementary School Teacher with (+) 15 years of experience as an Early Childhood Educator<br>
+          - Outdoor activities and arts stimulation. English & first steps in French.<br>
+          - Homemade food, ingredients from local and organic producers.<br>
+          - Flexible hours<br>
+          - Daily reports<br>
+          - First Aid CPR Cert and Police record checked<br>
+          - Low ratio: ONLY 4 FULL TIME SPOTS (from 8 months to 4 years old) to offer better care and attention.<br>
+          - Outdoors and indoors spaces for gross & fine motor skills, music instruments, playroom promoting discovery and creativity. One bedroom for each child.<br>
+          Having fun surrounded by nature to develop life appreciation<br>
+          <br>
+          You can also find us in godaycare.com and daycare bear.</small>
+      </div>
+    </div>
+    <div class="right-half">
+      <img src="photo6.JPG" alt="Photo 7">
+    </div>
+  </div>
+
+  <div class="mid-bar3">
+    Happy Parents
+    <br><br>
+    <div class="photo-row">
+      <img src="hp1.JPG" alt="Happy Parent 1">
+      <img src="hp2.JPG" alt="Happy Parent 2">
+    </div>
+    <div class="review-content">
+     <p>
+       ★ ★ ★ ★ ★  August 2, 2016 - <br>
+
+       "Meme's place was a wonderful experience for us and for our daughter.
+       The care taker truly loves the children and spends lots of time planning
+       fun events and curriculum for the children. Our daughter was loved, well fed
+       and extremely well cared for. She made the transition to daycare easy and was
+       always attentive and present with the children. I would recommend this daycare to
+       anyone who wants a warm, loving and stimulating home for their child. Additionally,
+       the food she made for the children was nutritious and allowed us to get our daughter
+       to try new things, which she now loves! We can't say enough about how positive our
+       experience was or how much we love the provider."
+       <br><br>
+       ★ ★ ★ ★ ★   November 13, 2012 - <br>
+
+       "If you want your child to be loved as if he/she was at home with a relative, you
+       will certainly experience that at Memes daycare! Every part of your childs care is
+       to the highest quality and your child will receive a lot of loving attention. The
+       days are structured yet filled with free/interactive play. You will be provided
+       with a summary of your childs day. The meal plan consists of freshly cooked healthy
+       organic meals (no processed foods!). I highly recommend Meme's daycare in every way."
+     </p>
+    </div>
+  </div>
+
+  <div class="mid-bar4">
+    Menu
+    <div class="review-content">
+      <div class="review-text">
+        We make homemade food with ingredients from local and organic producers.
+        <br>
+        Here are some examples of our weekly menu:
+      </div>
+    </div>
+    <div class="photo-normal">
+      <img src="Capture.JPG" alt="Photo 8">
+    </div>
+  </div>
+
+  <div class="mid-bar5">
+    <div class="contact-title">Contact Us</div>
+
+    <div class="contact-row">
+      <div class="left-halftext">Address:
+      <br><br>
+        <span class="small-text">
+           Meme’s Place<br>
+           77 Vanstone Drive, Kanata (K2L 1W4)<br>
+           Ottawa, ON
+          <br>
+        </span>
+      </div>
+      <div class="right-halftext">Contact:
+      <br><br>
+        <span class="small-text">
+           226-821-1537<br>
+           saulinorachel77@gmail.com
+          <br>
+        </span>
+      </div>
+    </div>
+    <div class="map-container">
+      <!-- Embedded Google map for the address. Click Share → Embed a map to get this, the "!4f11! part is how zoomed in it will be -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6695.306101656644!2d-75.8929567651088!3d45.30821483945613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccdff9423a7c995%3A0xbbe6b10c765468dc!2s77%20Vanstone%20Dr%2C%20Kanata%2C%20ON%20K2L%201W4!5e0!3m2!1sen!2sca!4v1752071493648!5m2!1sen!2sca"
+        width="100%"
+        height="380"
+        style="border:0; border-radius: 10px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+</body>
+
+</html>
