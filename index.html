@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Meme's Place</title>
   <!-- All the stuff that's hidden from website -->
@@ -11,6 +12,11 @@
     }
     body {
       margin: 0; /* Remove default browser margin (gets rid of white edge) */
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
     .top-bar { /* Is a CSS class */
       background-color: #66d9e8;
@@ -119,7 +125,6 @@
     }
     .mid-bar4 {
       background-color: rgba(157, 231, 97, 0.89);
-      text-align: center;
       height: 530px;
       width: 100%;
       text-align: center;
@@ -186,6 +191,7 @@
       width: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 0 auto; /* center on page */
     }
     .map-container {
       max-width: 1050px;
